@@ -2,17 +2,21 @@ SYS := $(shell clang -dumpmachine)
 
 CC			=	clang
 
-NAME		=	fractol
+NAME		=	wolf3d
 
 LNAME		=	ft
 
 DIR			=	lib$(LNAME)
 
-DIRMLX		=	minilibx
+# DIRMLX		=	minilibx
 
 HDR			=	$(DIR)/$(DIR).a
 
 SRC			=	main.c				\
+				parser.c			\
+				init_struct.c		\
+				print.c				\
+				check_for_parser.c	\
 
 OBJ			=	$(patsubst %.c,srcs/%.o,$(SRC))
 
@@ -20,11 +24,12 @@ LFLAGS		=	-O3 -L$(DIR) -l$(LNAME)
 
 WFLAGS 		=	-Wall -Wextra -Werror
 
-CFLAGS1		=	$(WFLAGS) -I./includes/ -I./$(DIR) -I./$(DIRMLX)
+CFLAGS1		=	$(WFLAGS) -I./includes/ -I./$(DIR)/includes
+# -I./$(DIRMLX)
 
 OFLAGS		=	 -g
 
-MLXFLAG		= -L/usr/local/lib/ -I/usr/local/include -lmlx -framework OpenGL -framework AppKit -lm
+# MLXFLAG		= -L/usr/local/lib/ -I/usr/local/include -lmlx -framework OpenGL -framework AppKit -lm
 
 HDR			=	$(DIR)/$(DIR).a
 
@@ -33,8 +38,9 @@ CFLAGS		=	$(CFLAGS1) $(OFLAGS)
 all:		$(NAME) $(HDR)
 
 $(NAME):	$(OBJ) $(HDR)
-			make -C $(DIRMLX)
-			$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(LFLAGS) $(MLXFLAG)
+			# make -C $(DIRMLX)
+			$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(LFLAGS)
+			#  $(MLXFLAG)
 
 %.o: %.c
 	$(CC) $(CFLAGS)  -c -o $@ $^
@@ -48,7 +54,7 @@ clean:
 
 fclean:		clean
 		make -C $(DIR) fclean
-		make -C $(DIRMLX) clean
+		# make -C $(DIRMLX) clean
 		rm -f $(NAME) $(HDR)
 
 re:			fclean all

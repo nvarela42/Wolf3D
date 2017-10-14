@@ -1,4 +1,4 @@
-CC	=		clang
+ CC	=		clang
 
 NAME =		libft.a
 
