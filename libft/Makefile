@@ -81,6 +81,7 @@ SOURCES =	ft_strlen.c					\
 			ft_cpy_double_chartab.c		\
 			search_and_replace_reverse.c\
 			count_simplechartab.c		\
+			gnl_check_size.c			\
 
 HEADERS	= -Iincludes/
 

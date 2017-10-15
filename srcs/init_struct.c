@@ -7,6 +7,7 @@ static void			fill_struct(t_map *map)
 	map->file = NULL;
 	map->dep_loop = 0;
 	map->checksize = 0;
+	map->pos_dep = 0;
 }
 
 t_map				*init_struct(void)

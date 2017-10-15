@@ -20,15 +20,17 @@ struct					s_map
 	size_t				checksize;
 	int					fd;
 	int					dep_loop;
+	int					pos_dep;
 	int					s_map;
 };
 
 int						parse_map(int ac, char **av, t_map *map);
-int						check_vertical_walls(char *s);
+int						check_vertical_walls(t_map *map, char *s);
 int						read_map(char *av, t_map *map);
 t_map					*init_struct(void);
 void					print_error(int type);
-void					print_usage(void);
 int						check_caract(char **s, int i, int j, char c);
 int						check_horizontal_walls(char **maptab, t_map *map);
+void					exit_prog(t_map **map, char *s, int i);
+
 #endif

@@ -6,7 +6,7 @@
 /*   By: nvarela <nvarela@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 18:00:06 by nvarela           #+#    #+#             */
-/*   Updated: 2017/10/14 01:52:44 by nvarela          ###   ########.fr       */
+/*   Updated: 2017/10/15 15:53:40 by nvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 
-# define BUFF_SIZE		10000
+# define BUFF_SIZE		1024
 # define BLACK			"\033[1;30m"
 # define RED			"\033[1;31m"
 # define GREEN			"\033[1;32m"
@@ -127,6 +127,7 @@ char				**ft_cpy_double_chartab(char **tab, int base);
 char				*search_and_replace_reverse(char *s, char *replacement,
 	 				char c);
 int					count_simplechartab(char *tab);
+int					gnl_check_size(int const fd, char **line, int n);
 
 
 #endif

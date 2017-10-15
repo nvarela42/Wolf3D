@@ -17,10 +17,11 @@ SRC			=	main.c				\
 				init_struct.c		\
 				print.c				\
 				check_for_parser.c	\
+				exit_prog.c			\
 
 OBJ			=	$(patsubst %.c,srcs/%.o,$(SRC))
 
-LFLAGS		=	-O3 -L$(DIR) -l$(LNAME)
+LFLAGS		=	-g -L$(DIR) -l$(LNAME)
 
 WFLAGS 		=	-Wall -Wextra -Werror
 

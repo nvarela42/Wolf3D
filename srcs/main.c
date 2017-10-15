@@ -1,9 +1,11 @@
  #include "wolf3d.h"
 
- int		main(int ac, char **av)
- {
-	 if(parse_map(ac, av, init_struct()) == -1)
-	 	return (EXIT_FAILURE);
-	 printf("linetab -> \n" );
-	 return (0);
+int		main(int ac, char **av)
+{
+	t_map	*map;
+
+	map = init_struct();
+	if(parse_map(ac, av, map) == -1)
+		exit_prog(&map, NULL, 0);
+	return (0);
  }
