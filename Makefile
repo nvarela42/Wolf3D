@@ -8,8 +8,6 @@ LNAME		=	ft
 
 DIR			=	lib$(LNAME)
 
-# DIRMLX		=	minilibx
-
 HDR			=	$(DIR)/$(DIR).a
 
 SRC			=	main.c				\
@@ -29,8 +27,13 @@ CFLAGS1		=	$(WFLAGS) -I./includes/ -I./$(DIR)/includes
 # -I./$(DIRMLX)
 
 OFLAGS		=	 -g
-
-# MLXFLAG		= -L/usr/local/lib/ -I/usr/local/include -lmlx -framework OpenGL -framework AppKit -lm
+ifneq (, $(findstring linux, $(SYS)))
+	DIRMLX	=	minilibx
+	MLXFLAG =	-L ./$(DIRMLX) -I./$(DIRMLX) -lmlx -lXext -lX11 -lm
+else
+  	DIRMLX	=	minilibx_macos
+	MLXFLAG =	-L ./$(DIRMLX) -I./$(DIRMLX) -lmlx -framework OpenGL -framework AppKit -lm
+endif
 
 HDR			=	$(DIR)/$(DIR).a
 
@@ -39,9 +42,8 @@ CFLAGS		=	$(CFLAGS1) $(OFLAGS)
 all:		$(NAME) $(HDR)
 
 $(NAME):	$(OBJ) $(HDR)
-			# make -C $(DIRMLX)
-			$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(LFLAGS)
-			#  $(MLXFLAG)
+			make -C $(DIRMLX)
+			$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(LFLAGS) $(MLXFLAG)
 
 %.o: %.c
 	$(CC) $(CFLAGS)  -c -o $@ $^
@@ -55,7 +57,7 @@ clean:
 
 fclean:		clean
 		make -C $(DIR) fclean
-		# make -C $(DIRMLX) clean
+		make -C $(DIRMLX) clean
 		rm -f $(NAME) $(HDR)
 
 re:			fclean all
