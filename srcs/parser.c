@@ -2,12 +2,14 @@
 
 static int	check_in_loop(t_map *map, char *line, int ret)
 {
+	static int  nb_line = 0;
 	if ((ft_strlen(line) != map->checksize && map->dep_loop != 0) ||
-	(ret < 0 || check_vertical_walls(map, line) == -1))
+	(ret < 0 || check_vertical_walls(map, line, nb_line) == -1))
 		exit_prog(&map, line, UNVALIDMAP);
 	map->linetab = ft_realloc(map->linetab, line);
 	map->checksize = ft_strlen(line);
 	map->dep_loop = 1;
+	nb_line++;
 	return (0);
 }
 
@@ -29,7 +31,7 @@ int			read_map(char *file, t_map *map)
 		if(check_in_loop(map, line, ret) == -1)
 			exit_prog(&map, line, UNVALIDMAP);
 	}
-	if (ret == -1 || map->pos_dep == 0 || map->pos_dep > 1)
+	if (ret == -1 || map->nb_pos_dep == 0 || map->nb_pos_dep > 1)
 		exit_prog(&map, NULL, UNVALIDMAP);
 	close(map->fd);
 	map->s_map = ft_count_tab(map->linetab);

@@ -16,6 +16,8 @@ SRC			=	main.c				\
 				print.c				\
 				check_for_parser.c	\
 				exit_prog.c			\
+				start_wolf.c		\
+				key_fonction.c		\
 
 OBJ			=	$(patsubst %.c,srcs/%.o,$(SRC))
 

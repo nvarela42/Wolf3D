@@ -2,10 +2,13 @@
 
 int		main(int ac, char **av)
 {
-	t_map	*map;
+	t_env	*env;
 
-	map = init_struct();
-	if(parse_map(ac, av, map) == -1)
-		exit_prog(&map, NULL, 0);
+	env = init_struct_env();
+	if(parse_map(ac, av, env->map) == -1)
+		exit_prog(&(env->map), NULL, 0);
+	env->cam.pos = env->map->pos_dep;
+	printf("x: %f, y:%f\n", env->cam.pos.x, env->cam.pos.y);
+	create_win(env->mlx);
 	return (0);
  }

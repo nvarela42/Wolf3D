@@ -23,7 +23,7 @@ int			check_horizontal_walls(char **maptab, t_map *map)
 	return (0);
 }
 
-int			check_vertical_walls(t_map *map, char *s)
+int			check_vertical_walls(t_map *map, char *s, int nb_line)
 {
 	int		i;
 	if (s[0] != '1' || s[ft_strlen(s) - 1] != '1')
@@ -32,7 +32,10 @@ int			check_vertical_walls(t_map *map, char *s)
 	while (s[i])
 	{
 		if (s[i] == 'X')
-			map->pos_dep++;
+		{
+			map->nb_pos_dep++;
+			map->pos_dep = (t_pt2d){i, nb_line};
+		}
 		if (s[i] != '0' && s[i] != '1' && s[i] != 'X')
 			return(-1);
 		i++;
