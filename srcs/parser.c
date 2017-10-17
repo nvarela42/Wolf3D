@@ -17,7 +17,7 @@ int			read_map(char *file, t_map *map)
 {
 	int		ret;
 	char	*line;
-	int 	total;
+	int		total;
 
 	ret = 0;
 	total = 0;

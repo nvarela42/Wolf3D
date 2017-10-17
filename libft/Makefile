@@ -98,7 +98,7 @@ $(NAME): $(OBJECTS)
 
 %.o: %.c
 	$(CC) $(WFLAGS) $(HEADERS) -c -o $@ $^
-	@echo "$@"
+	# @echo "$@"
 
 clean:
 	rm -rf $(OBJECTS)

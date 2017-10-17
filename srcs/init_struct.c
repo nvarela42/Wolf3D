@@ -6,17 +6,25 @@
 /*   By: nvarela <nvarela@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/16 15:31:17 by nvarela           #+#    #+#             */
-/*   Updated: 2017/10/16 16:23:49 by nvarela          ###   ########.fr       */
+/*   Updated: 2017/10/17 19:02:40 by nvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf3d.h"
 
+static t_ray		init_struct_ray()
+{
+	t_ray			ray;
+
+	ray = (t_ray){(t_pt2d){0, 0}, (t_pt2d){0,0}};
+	return (ray);
+}
+
 static t_cam		init_struct_cam()
 {
 	t_cam			cam;
 
-	cam = (t_cam){(t_pt2d){0, 0}, (t_pt2d){0, 0}, 1, 60};
+	cam = (t_cam){(t_pt2d){0, 0}, (t_pt2d){1, 0}, 1, 60};
 	return (cam);
 }
 
@@ -49,6 +57,7 @@ static t_map		*init_struct_map(void)
 	map->dep_loop = 0;
 	map->checksize = 0;
 	map->nb_pos_dep = 0;
+	map->plane = (t_pt2d){0, 0.66};
 	return (map);
 }
 
@@ -61,5 +70,6 @@ t_env				*init_struct_env(void)
 	env->mlx = init_struct_mlx();
 	env->map = init_struct_map();
 	env->cam = init_struct_cam();
+	env->ray = init_struct_ray();
 	return (env);
 }
