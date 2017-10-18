@@ -20,6 +20,8 @@ SRC			=	main.c				\
 				key_fonction.c		\
 				data_map.c			\
 				event_fonc.c		\
+				mlx_image.c			\
+				put_pix_image.c		\
 
 OBJ			=	$(patsubst %.c,srcs/%.o,$(SRC))
 

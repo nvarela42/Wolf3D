@@ -6,12 +6,11 @@
 /*   By: nvarela <nvarela@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/18 12:13:09 by nvarela           #+#    #+#             */
-/*   Updated: 2017/10/18 14:27:10 by nvarela          ###   ########.fr       */
+/*   Updated: 2017/10/18 14:53:48 by nvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf3d.h"
-
 
 int				quit_cross(t_env *env)
 {
@@ -32,7 +31,9 @@ int				key_fonction(int key, void *param)
 	else if (key == LEFTKEY || key == RIGHTKEY || key == UPKEY ||
 		key == DOWNKEY)
 		movekey(key, tmp);
-	// else if (key == RESETKEY)
-		// resetkey(tmp);
+	else if (key == KEYMINUS || key == KEYPLUS)
+		speedkey(key, tmp);
+	else if (key == RESETKEY)
+		resetkey(tmp);
 	return (0);
 }

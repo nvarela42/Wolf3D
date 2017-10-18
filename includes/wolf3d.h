@@ -28,6 +28,9 @@
 # define LEFTKEY 123
 # define RIGHTKEY 124
 # define RESETKEY 15
+# define KEYPLUS 69
+# define KEYMINUS 78
+
 
 
 typedef struct s_map	t_map;
@@ -107,5 +110,10 @@ void					start_wolf(t_env *env);
 void					launch_raycasting(t_env *env);
 int						key_fonction(int key, void *param);
 void					movekey(int key, t_env *env);
+void					speedkey(int key, t_env *env);
+void					resetkey(t_env *env);
+void					create_image(t_env *env);
+int						clear_image_and_win(t_env *env);
+
 
 #endif
