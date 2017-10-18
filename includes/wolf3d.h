@@ -19,6 +19,7 @@
 # define RAY env->ray
 # define CAM env->cam
 # define MAP env->map
+# define KEYS env->keys
 # define ABS(x) x = (x < 0) ? x * -1 : x;
 # define COLOR_S ft_search_rgb(51, 204, 255)
 # define COLOR_W ft_search_rgb(255, 0, 0)
@@ -31,7 +32,9 @@
 # define RESETKEY 15
 # define KEYPLUS 69
 # define KEYMINUS 78
-
+# define MASK_KEYPRESS 2
+# define MASK_KEYRELEASE 3
+# define MASK_CROSS 17
 
 
 typedef struct s_map	t_map;
@@ -40,6 +43,7 @@ typedef struct s_mlx	t_mlx;
 typedef struct s_env	t_env;
 typedef struct s_cam	t_cam;
 typedef struct s_ray	t_ray;
+typedef struct s_keys	t_keys;
 
 
 struct					s_pt2d
@@ -88,12 +92,27 @@ struct					s_cam
 	float				fov;
 };
 
+/*
+** Key struct, add more keys here
+*/
+
+struct					s_keys
+{
+	int					w;
+	int					a;
+	int					s;
+	int					d;
+	int					r;
+	int					esc;
+};
+
 struct					s_env
 {
 	t_map				*map;
 	t_mlx				mlx;
 	t_cam				cam;
 	t_ray				ray;
+	t_keys				keys;
 };
 
 int						parse_map(int ac, char **av, t_map *map);
@@ -109,7 +128,8 @@ void					exit_init(void);
 int						quit_cross(t_env *env);
 void					start_wolf(t_env *env);
 void					launch_raycasting(t_env *env);
-int						key_fonction(int key, void *param);
+int						key_press(int key, void *param);
+int						key_release(int key, void *param);
 void					movekey(int key, t_env *env);
 void					speedkey(int key, t_env *env);
 void					resetkey(t_env *env);

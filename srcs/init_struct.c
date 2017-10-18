@@ -3,14 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   init_struct.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nvarela <nvarela@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agfernan <agfernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/16 15:31:17 by nvarela           #+#    #+#             */
-/*   Updated: 2017/10/17 19:02:40 by nvarela          ###   ########.fr       */
+/*   Updated: 2017/10/18 15:45:43 by agfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf3d.h"
+
+static t_keys		init_keys()
+{
+	return ((t_keys){0, 0, 0, 0, 0, 0});
+}
 
 static t_ray		init_struct_ray()
 {
@@ -67,9 +72,10 @@ t_env				*init_struct_env(void)
 
 	if (!(env = (t_env *)malloc(sizeof(t_env))))
 			return (NULL);
-	env->mlx = init_struct_mlx();
-	env->map = init_struct_map();
-	env->cam = init_struct_cam();
-	env->ray = init_struct_ray();
+	MLX = init_struct_mlx();
+	MAP = init_struct_map();
+	CAM = init_struct_cam();
+	RAY = init_struct_ray();
+	KEYS = init_keys();
 	return (env);
 }

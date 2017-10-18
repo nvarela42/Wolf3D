@@ -6,7 +6,7 @@
 /*   By: nvarela <nvarela@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/18 12:13:09 by nvarela           #+#    #+#             */
-/*   Updated: 2017/10/18 14:53:48 by nvarela          ###   ########.fr       */
+/*   Updated: 2017/10/18 16:26:13 by nvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,20 @@ int				quit_cross(t_env *env)
 	return (0);
 }
 
-int				key_fonction(int key, void *param)
+int				key_press(int key, void*param)
 {
-	t_env		*tmp;
+	t_env		*env;
 
-	printf("key -> %d\n", key);
-	tmp = param;
+	env = (t_env *)param;
+	printf("pressed: key -> %d\n", key);
 	if (key == ESCAPEKEY)
-		exit_prog(&(tmp->map), NULL, 0);
+		exit_prog(&(MAP), NULL, 0);
+	KEYS.w = (key == UPKEY) ? 1 : KEYS.w;
+	KEYS.a = (key == LEFTKEY) ? 1 : KEYS.a;
+	KEYS.s = (key == DOWNKEY) ? 1 : KEYS.s;
+	KEYS.d = (key == RIGHTKEY) ? 1 : KEYS.d;
+	KEYS.r = (key == RESETKEY) ? 1 : KEYS.r;
+	//TODO:add plus minus keys
 	else if (key == LEFTKEY || key == RIGHTKEY || key == UPKEY ||
 		key == DOWNKEY)
 		movekey(key, tmp);
@@ -35,5 +41,20 @@ int				key_fonction(int key, void *param)
 		speedkey(key, tmp);
 	else if (key == RESETKEY)
 		resetkey(tmp);
-	return (0);
+	return (1);
+}
+
+int				key_release(int key, void*param)
+{
+	t_env		*env;
+
+	env = (t_env *)param;
+	printf("released: key -> %d\n", key);
+	KEYS.w = (key == UPKEY) ? 0 : KEYS.w;
+	KEYS.a = (key == LEFTKEY) ? 0 : KEYS.a;
+	KEYS.s = (key == DOWNKEY) ? 0 : KEYS.s;
+	KEYS.d = (key == RIGHTKEY) ? 0 : KEYS.d;
+	if (key == RESETKEY)
+		CAM.pos = MAP->pos_dep;
+	return (1);
 }
