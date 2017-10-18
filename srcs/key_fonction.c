@@ -6,16 +6,17 @@
 /*   By: nvarela <nvarela@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/18 12:13:09 by nvarela           #+#    #+#             */
-/*   Updated: 2017/10/18 12:40:41 by nvarela          ###   ########.fr       */
+/*   Updated: 2017/10/18 12:50:48 by nvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf3d.h"
 
 
-int				quit_cross(t_mlx mlx)
+int				quit_cross(t_env *env)
 {
-	(void)mlx;
+	(void)env;
+	printf("quit cross\n");
 	exit(EXIT_SUCCESS);
 	return (0);
 }

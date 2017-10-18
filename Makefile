@@ -23,14 +23,14 @@ SRC			=	main.c				\
 
 OBJ			=	$(patsubst %.c,srcs/%.o,$(SRC))
 
-LFLAGS		=	-g -L$(DIR) -l$(LNAME)
+LFLAGS		=	-L$(DIR) -l$(LNAME)
 
-WFLAGS 		=	-Wall -Wextra -Werror
+WFLAGS 		=	-g3 -fsanitize=address -Wall -Wextra -Werror
 
 CFLAGS1		=	$(WFLAGS) -I./includes/ -I./$(DIR)/includes
 # -I./$(DIRMLX)
 
-OFLAGS		=	 -g
+OFLAGS		=	 #-Ofast -O3
 ifneq (, $(findstring linux, $(SYS)))
 	DIRMLX	=	minilibx
 	MLXFLAG =	-L ./$(DIRMLX) -I./$(DIRMLX) -lmlx -lXext -lX11 -lm

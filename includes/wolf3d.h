@@ -102,7 +102,7 @@ int						check_horizontal_walls(char **maptab, t_map *map);
 void					exit_prog(t_map **map, char *s, int i);
 int						print_pix_column(int pos, int dep, int final);
 void					exit_init(void);
-int						quit_cross(t_mlx mlx);
+int						quit_cross(t_env *env);
 void					start_wolf(t_env *env);
 void					launch_raycasting(t_env *env);
 int						key_fonction(int key, void *param);

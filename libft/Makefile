@@ -97,8 +97,8 @@ $(NAME): $(OBJECTS)
 	ranlib $(NAME)
 
 %.o: %.c
-	$(CC) $(WFLAGS) $(HEADERS) -c -o $@ $^
-	# @echo "$@"
+	@$(CC) $(WFLAGS) $(HEADERS) -c -o $@ $^
+	@echo "$@"
 
 clean:
 	rm -rf $(OBJECTS)
