@@ -6,13 +6,13 @@
 /*   By: nvarela <nvarela@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/18 15:09:15 by nvarela           #+#    #+#             */
-/*   Updated: 2017/10/18 15:15:07 by nvarela          ###   ########.fr       */
+/*   Updated: 2017/10/18 15:43:41 by nvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 
-#include "fractol.h"
+#include "wolf3d.h"
 
 int			ft_search_rgb(int r, int g, int b)
 {
@@ -33,7 +33,7 @@ int			ft_search_rgb(int r, int g, int b)
 	return (col);
 }*/
 
-void	put_pix_image(t_env *env int x, int y, int color)
+void	put_pix_image(t_env *env, int x, int y, int color)
 {
 	int		def_color;
 	int		i;

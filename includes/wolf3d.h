@@ -9,6 +9,7 @@
 
 # define WRONGFILE 1
 # define WALL 1
+# define GROUND 0
 # define UNVALIDMAP 2
 # define ARGNUMBER 3
 # define WIN_W 1024
