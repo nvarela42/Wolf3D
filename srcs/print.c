@@ -6,7 +6,7 @@
 /*   By: nvarela <nvarela@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/18 12:13:40 by nvarela           #+#    #+#             */
-/*   Updated: 2017/10/18 12:18:42 by nvarela          ###   ########.fr       */
+/*   Updated: 2017/10/18 14:26:27 by nvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,9 @@ static void			print_usage(void)
 
 void			print_error(int type)
 {
-	if (type == WRONGFILE)
+	if (type == 0)
+		return ;
+	else if (type == WRONGFILE)
 		ft_putendl(RED"\nWrong file type or name !\n\n"DEFAULT_COLOR);
 	else if (type == UNVALIDMAP)
 		ft_putendl(RED"\nunvalid map !\n\n"DEFAULT_COLOR);
