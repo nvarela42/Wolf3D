@@ -6,7 +6,7 @@
 /*   By: nvarela <nvarela@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/28 17:42:11 by nvarela           #+#    #+#             */
-/*   Updated: 2017/10/18 16:10:45 by nvarela          ###   ########.fr       */
+/*   Updated: 2017/10/18 16:13:20 by nvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ static void		usage_speed(void)
 {
 	ft_putendl("  "UNDERLINE RED "SPEED"DEFAULT_COLOR);
 	ft_putstr(YELLOW"  speed up: "DEFAULT_COLOR);
-	ft_putendl(WHITE"'+' key (touch '+').");
+	ft_putendl(WHITE"'+' key.");
 	ft_putstr(YELLOW"  speed dawn: "DEFAULT_COLOR);
-	ft_putendl(WHITE"'-' key (touch '-').");
+	ft_putendl(WHITE"'-' key.");
 }
 
 /*static void		usage_color(void)
@@ -58,7 +58,6 @@ static void		usage_speed(void)
 static void		usage_move(void)
 {
 	ft_putendl("  "UNDERLINE RED"MOVEMENT"DEFAULT_COLOR);
-	ft_putendl("\n");
 	ft_putstr(YELLOW"  move right: ");
 	ft_putendl(WHITE"'d' key.");
 	ft_putstr(YELLOW"  move left: "DEFAULT_COLOR);
@@ -77,12 +76,12 @@ void			usage_event(void)
 	ft_putendl(PURPLE "             M  O  T  I  O  N     "DEFAULT_COLOR);
 	ft_putendl("\n");
 	usage_move();
-	ft_putendl("\n\n");
+	ft_putendl("\n");
 	// ft_usage_mouse_key();
 	// ft_putendl("\n\n");
 	// ft_usage_color();
 	usage_speed();
-	ft_putendl("\n\n");
+	ft_putendl("\n");
 	usage_reset();
 	ft_putendl("\n");
 	ft_putendl(PURPLE"     __________________________________     ");
