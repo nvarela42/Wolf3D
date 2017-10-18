@@ -19,6 +19,7 @@ SRC			=	main.c				\
 				start_wolf.c		\
 				key_fonction.c		\
 				data_map.c			\
+				event_fonc.c		\
 
 OBJ			=	$(patsubst %.c,srcs/%.o,$(SRC))
 

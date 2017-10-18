@@ -22,6 +22,13 @@
 # define COLOR_S ft_search_rgb(51, 204, 255)
 # define COLOR_W ft_search_rgb(255, 0, 0)
 # define COLOR_G ft_search_rgb(102, 102, 102)
+# define ESCAPEKEY 53
+# define UPKEY 126
+# define DOWNKEY 125
+# define LEFTKEY 123
+# define RIGHTKEY 124
+# define RESETKEY 15
+
 
 typedef struct s_map	t_map;
 typedef struct s_pt2d	t_pt2d;
@@ -98,5 +105,7 @@ void					exit_init(void);
 int						quit_cross(t_mlx mlx);
 void					start_wolf(t_env *env);
 void					launch_raycasting(t_env *env);
+int						key_fonction(int key, void *param);
+void					movekey(int key, t_env *env);
 
 #endif

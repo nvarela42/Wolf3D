@@ -1,4 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   key_fonction.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nvarela <nvarela@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/10/18 12:13:09 by nvarela           #+#    #+#             */
+/*   Updated: 2017/10/18 12:40:41 by nvarela          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "wolf3d.h"
+
 
 int				quit_cross(t_mlx mlx)
 {
@@ -6,9 +19,19 @@ int				quit_cross(t_mlx mlx)
 	exit(EXIT_SUCCESS);
 	return (0);
 }
-/*
-void			key_fonction()
-{
 
+int				key_fonction(int key, void *param)
+{
+	t_env		*tmp;
+
+	printf("key -> %d\n", key);
+	tmp = param;
+	if (key == ESCAPEKEY)
+		exit_prog(&(tmp->map), NULL, 0);
+	else if (key == LEFTKEY || key == RIGHTKEY || key == UPKEY ||
+		key == DOWNKEY)
+		movekey(key, tmp);
+	// else if (key == RESETKEY)
+		// resetkey(tmp);
+	return (0);
 }
-*/
