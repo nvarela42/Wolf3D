@@ -1,0 +1,6 @@
+.DS_STORE
+minilibix
+minilibix_macos
+.vscode
+*.o
+*.a
