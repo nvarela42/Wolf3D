@@ -22,6 +22,7 @@ SRC			=	main.c				\
 				event_fonc.c		\
 				mlx_image.c			\
 				put_pix_image.c		\
+				print_usage_event.c	\
 
 OBJ			=	$(patsubst %.c,srcs/%.o,$(SRC))
 

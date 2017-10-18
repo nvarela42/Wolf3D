@@ -6,7 +6,7 @@
 /*   By: nvarela <nvarela@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 18:00:06 by nvarela           #+#    #+#             */
-/*   Updated: 2017/10/15 15:53:40 by nvarela          ###   ########.fr       */
+/*   Updated: 2017/10/18 16:08:04 by nvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include <fcntl.h>
 
 # define BUFF_SIZE		1024
+# define UNDERLINE		"\033[1;04m"
 # define BLACK			"\033[1;30m"
 # define RED			"\033[1;31m"
 # define GREEN			"\033[1;32m"
@@ -29,7 +30,7 @@
 # define BLUE			"\033[1;34m"
 # define PURPLE			"\033[1;35m"
 # define CYAN			"\033[1;36m"
-# define GREY			"\033[1;37m"
+# define WHITE			"\033[1;37m"
 # define DEFAULT_COLOR	"\033[0;m"
 
 typedef	struct		s_list

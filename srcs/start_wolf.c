@@ -6,7 +6,7 @@
 /*   By: nvarela <nvarela@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/18 12:13:52 by nvarela           #+#    #+#             */
-/*   Updated: 2017/10/18 15:42:27 by nvarela          ###   ########.fr       */
+/*   Updated: 2017/10/18 16:01:30 by nvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void		start_wolf(t_env *env)
 {
+	usage_event();
 	create_image(env);
 	mlx_put_image_to_window(MLX.mlx, MLX.win, MLX.image, 0, 0);
 	mlx_hook(MLX.win, 17, 0, quit_cross, env);

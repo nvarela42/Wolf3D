@@ -24,10 +24,10 @@
 # define COLOR_W ft_search_rgb(255, 0, 0)
 # define COLOR_G ft_search_rgb(102, 102, 102)
 # define ESCAPEKEY 53
-# define UPKEY 126
-# define DOWNKEY 125
-# define LEFTKEY 123
-# define RIGHTKEY 124
+# define UPKEY 13
+# define DOWNKEY 1
+# define LEFTKEY 0
+# define RIGHTKEY 2
 # define RESETKEY 15
 # define KEYPLUS 69
 # define KEYMINUS 78
@@ -115,6 +115,6 @@ void					speedkey(int key, t_env *env);
 void					resetkey(t_env *env);
 void					create_image(t_env *env);
 int						clear_image_and_win(t_env *env);
-
+void					usage_event(void);
 
 #endif

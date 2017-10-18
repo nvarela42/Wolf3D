@@ -6,7 +6,7 @@
 /*   By: nvarela <nvarela@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/18 12:13:40 by nvarela           #+#    #+#             */
-/*   Updated: 2017/10/18 15:15:15 by nvarela          ###   ########.fr       */
+/*   Updated: 2017/10/18 16:08:50 by nvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ static void			print_usage(void)
 	ft_putendl("-----------------------------------"DEFAULT_COLOR);
 	ft_putchar('\n');
 	ft_putstr(YELLOW"launch the program :");
-	ft_putstr(GREY" ./wolf3d <file_name> ");
+	ft_putstr(WHITE" ./wolf3d <file_name> ");
 	ft_putstr(GREEN"or ");
-	ft_putendl(GREY"./wolf3d\n");
+	ft_putendl(WHITE"./wolf3d\n");
 	ft_putstr(BLUE"if you decide not to put any argument, the program will ");
 	ft_putendl("launch with a default map.\n"DEFAULT_COLOR);
 	print_valid_map();
