@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_struct.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agfernan <agfernan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nvarela <nvarela@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/16 15:31:17 by nvarela           #+#    #+#             */
-/*   Updated: 2017/10/18 15:45:43 by agfernan         ###   ########.fr       */
+/*   Updated: 2017/10/18 16:37:19 by nvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static t_cam		init_struct_cam()
 {
 	t_cam			cam;
 
-	cam = (t_cam){(t_pt2d){0, 0}, (t_pt2d){1, 0}, 1, 60};
+	cam = (t_cam){(t_pt2d){0, 0}, (t_pt2d){1, 0}, (WIN_W / 2) / tan(30) , 60};
 	return (cam);
 }
 

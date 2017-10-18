@@ -6,7 +6,7 @@
 /*   By: nvarela <nvarela@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/18 12:12:48 by nvarela           #+#    #+#             */
-/*   Updated: 2017/10/18 16:15:41 by nvarela          ###   ########.fr       */
+/*   Updated: 2017/10/18 16:30:55 by nvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 static float			send_ray(t_env *env)
 {
 	RAY.pos = CAM.pos;
-	RAY.orient.x = CAM.orient.x + MAP->plane.x * CAM.pos.x;
-	RAY.orient.y = CAM.orient.y + MAP->plane.y * CAM.pos.y;
+	RAY.orient = CAM.orient;
 	printf("ray_x . %f, ray_y . %f\n", RAY.orient.x, RAY.orient.y);
 	return (0);
 }
