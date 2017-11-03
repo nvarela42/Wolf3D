@@ -10,19 +10,24 @@ DIR			=	lib$(LNAME)
 
 HDR			=	$(DIR)/$(DIR).a
 
-SRC			=	main.c				\
-				parser.c			\
-				init_struct.c		\
-				print.c				\
-				check_for_parser.c	\
-				exit_prog.c			\
-				start_wolf.c		\
-				key_fonction.c		\
-				data_map.c			\
-				event_fonc.c		\
-				mlx_image.c			\
-				put_pix_image.c		\
-				print_usage_event.c	\
+SRC			=	main.c						\
+				parser.c					\
+				init_struct.c				\
+				init_struct_bis.c			\
+				print.c						\
+				check_for_parser.c			\
+				exit_prog.c					\
+				start_wolf.c				\
+				launch_raycasting.c			\
+				init_step_and_side.c		\
+				move_and_check_hit_wall.c	\
+				correct_fisheye.c			\
+				search_where_draw.c			\
+				key_fonction.c				\
+				event_fonc.c				\
+				mlx_image.c					\
+				put_pix_image.c				\
+				print_usage_event.c			\
 
 OBJ			=	$(patsubst %.c,srcs/%.o,$(SRC))
 

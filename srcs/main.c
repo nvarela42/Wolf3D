@@ -6,7 +6,7 @@
 /*   By: nvarela <nvarela@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/18 12:13:19 by nvarela           #+#    #+#             */
-/*   Updated: 2017/10/18 16:18:39 by nvarela          ###   ########.fr       */
+/*   Updated: 2017/11/03 17:53:25 by nvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,5 @@ int		main(int ac, char **av)
 	if(parse_map(ac, av, env->map) == -1)
 		exit_prog(&(env->map), NULL, 0);
 	start_wolf(env);
-	printf("x: %f, y:%f\n", env->cam.pos.x, env->cam.pos.y);
-	launch_raycasting(env);
 	return (0);
  }

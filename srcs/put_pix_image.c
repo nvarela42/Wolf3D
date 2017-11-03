@@ -6,7 +6,7 @@
 /*   By: nvarela <nvarela@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/18 15:09:15 by nvarela           #+#    #+#             */
-/*   Updated: 2017/10/18 15:43:41 by nvarela          ###   ########.fr       */
+/*   Updated: 2017/11/03 16:52:42 by nvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include "wolf3d.h"
 
-int			ft_search_rgb(int r, int g, int b)
+int			search_rgb(int r, int g, int b)
 {
 	return ((r & 0xff) << 16) + ((g & 0xff) << 8) + (b & 0xff);
 }

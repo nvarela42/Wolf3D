@@ -6,30 +6,18 @@
 /*   By: nvarela <nvarela@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/16 15:31:17 by nvarela           #+#    #+#             */
-/*   Updated: 2017/10/18 16:37:19 by nvarela          ###   ########.fr       */
+/*   Updated: 2017/11/03 14:58:57 by nvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf3d.h"
 
-static t_keys		init_keys()
-{
-	return ((t_keys){0, 0, 0, 0, 0, 0});
-}
-
-static t_ray		init_struct_ray()
-{
-	t_ray			ray;
-
-	ray = (t_ray){(t_pt2d){0, 0}, (t_pt2d){0,0}};
-	return (ray);
-}
-
-static t_cam		init_struct_cam()
+static t_cam		init_struct_cam(void)
 {
 	t_cam			cam;
 
-	cam = (t_cam){(t_pt2d){0, 0}, (t_pt2d){1, 0}, (WIN_W / 2) / tan(30) , 60};
+	cam = (t_cam){(t_pt2d){0, 0}, (t_pt2d){1, 0}, (t_pt2d){0, 0.66}, 0, 0,
+	(WIN_W / 2) / tan(30) , 60};
 	return (cam);
 }
 
@@ -62,7 +50,6 @@ static t_map		*init_struct_map(void)
 	map->dep_loop = 0;
 	map->checksize = 0;
 	map->nb_pos_dep = 0;
-	map->plane = (t_pt2d){0, 0.66};
 	return (map);
 }
 
@@ -77,5 +64,7 @@ t_env				*init_struct_env(void)
 	CAM = init_struct_cam();
 	RAY = init_struct_ray();
 	KEYS = init_keys();
+	WALL = init_struct_wall();
+	DRAW = init_struct_draw();
 	return (env);
 }

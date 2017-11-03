@@ -6,7 +6,7 @@
 /*   By: nvarela <nvarela@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/18 12:13:09 by nvarela           #+#    #+#             */
-/*   Updated: 2017/10/18 16:26:13 by nvarela          ###   ########.fr       */
+/*   Updated: 2017/11/02 16:51:24 by nvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int				quit_cross(t_env *env)
 	return (0);
 }
 
-int				key_press(int key, void*param)
+int				key_press(int key, void *param)
 {
 	t_env		*env;
 
@@ -33,14 +33,13 @@ int				key_press(int key, void*param)
 	KEYS.s = (key == DOWNKEY) ? 1 : KEYS.s;
 	KEYS.d = (key == RIGHTKEY) ? 1 : KEYS.d;
 	KEYS.r = (key == RESETKEY) ? 1 : KEYS.r;
-	//TODO:add plus minus keys
-	else if (key == LEFTKEY || key == RIGHTKEY || key == UPKEY ||
-		key == DOWNKEY)
-		movekey(key, tmp);
+	/*TODO:add plus minus keys*/
+	if (key == LEFTKEY || key == RIGHTKEY || key == UPKEY || key == DOWNKEY)
+		movekey(key, env);
 	else if (key == KEYMINUS || key == KEYPLUS)
-		speedkey(key, tmp);
+		speedkey(key, env);
 	else if (key == RESETKEY)
-		resetkey(tmp);
+		resetkey(env);
 	return (1);
 }
 
